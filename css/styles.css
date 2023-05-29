@@ -1,0 +1,80 @@
+.card {
+    margin-bottom: 20px;
+    object-position: center;
+    text-align: center;
+}
+
+.nav-item {
+    margin-right: 10px; /* Ajusta el valor para controlar la separación entre los botones */
+    margin-top: 5px;
+  }
+  
+  .nav-button {
+    border: none;
+    border-radius: 4px;
+    background-color: #6c757d;
+    color: #ffffff;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .nav-button:hover {
+    background-color: #495057;
+  }
+  
+  
+
+.card-img-top {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+/* Estilos para el pop-up */
+.popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+.popup-close {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    object-position: center;
+}
+
+/* CSS */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.popup p {
+    margin-bottom: 20px;
+}

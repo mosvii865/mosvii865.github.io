@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paquito's Fashion</title>
+    <!-- Enlaces a los archivos CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Tu archivo CSS personalizado -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Archivo JS -->
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <p class="navbar-brand">Paquito's Fashion</p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <button class="nav-button" onclick="location.href='index.html'">Inicio</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-button" onclick="showPopup()">Ubicacion</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-button" onclick="showPopup2()">Contacto</button>
+                </li>
+                <li class="nav-item" style="margin-top: 15px;">
+                    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="encrypted"
+                            value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_SM.gif"
+                            border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1"
+                            height="1">
+                    </form>
+                </li>
+            </ul>
+        </div>        
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container mt-4">
+        <h1>Bienvenido a nuestra tienda de ropa</h1>
+        <p>Descubre nuestros uniformes.</p>
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="img/Falda.jpeg" class="card-img-top" alt="Descripción de la imagen">
+                    <div class="card-body">
+                        <h5 class="card-title">Falda Escolar</h5>
+                        <p class="card-text">Precio: $220 mxn</p>
+                        <a href="falda.html" class="btn btn-primary">Ver elemento</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="img/Camisa vestir.jpeg" class="card-img-top" alt="Descripción de la imagen">
+                    <div class="card-body">
+                        <h5 class="card-title">Camisa c/logo</h5>
+                        <p class="card-text">Precio: $190 mxn</p>
+                        <a href="Camisa logo.html" class="btn btn-primary">Ver elemento</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="img/Deportivo.jpeg" class="card-img-top" alt="Descripción de la imagen">
+                    <div class="card-body">
+                        <h5 class="card-title">Pantalon Deportivo</h5>
+                        <p class="card-text">Precio: $220 mxn</p>
+                        <a href="Pantalon deportivo.html" class="btn btn-primary">Ver elemento</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="img/Camisa deportiva.jpeg" class="card-img-top" alt="Descripción de la imagen">
+                    <div class="card-body">
+                        <h5 class="card-title">Camiseta Deportiva</h5>
+                        <p class="card-text">Precio: $220 mxn</p>
+                        <a href="camisa deportiva.html" class="btn btn-primary">Ver elemento</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="img/pantalon.jpge" class="card-img-top" alt="Descripción de la imagen">
+                    <div class="card-body">
+                        <h5 class="card-title">Pantalon de Vestir</h5>
+                        <p class="card-text">Precio: $350 mxn</p>
+                        <a href="Pantalon vestir.html" class="btn btn-primary">Ver elemento</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="img/Chamarra.jpeg" class="card-img-top" alt="Descripción de la imagen">
+                    <div class="card-body">
+                        <h5 class="card-title">Chamarra Deportiva sin forro</h5>
+                        <p class="card-text">Precio: $400 mxn</p>
+                        <a href="Chamarra.html" class="btn btn-primary">Ver elemento</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="img/Chamarra.jpeg" class="card-img-top" alt="Descripción de la imagen">
+                    <div class="card-body">
+                        <h5 class="card-title">Chamarra Deportiva con forro</h5>
+                        <p class="card-text">Precio: $400 mxn</p>
+                        <a href="Chamarra Forro.html" class="btn btn-primary">Ver elemento</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="img/Calceta.jpeg" class="card-img-top" alt="Descripción de la imagen">
+                    <div class="card-body">
+                        <h5 class="card-title">Calcetas</h5>
+                        <p class="card-text">Precio: $70 mxn</p>
+                        <a href="Calceta.html" class="btn btn-primary">Ver elemento</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="img/Corbata.jpeg" class="card-img-top" alt="Descripción de la imagen">
+                    <div class="card-body">
+                        <h5 class="card-title">Corbata</h5>
+                        <p class="card-text">Precio: $70 mxn</p>
+                        <a href="Corbata.html" class="btn btn-primary">Ver elemento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up -->
+    <div id="popup" class="popup">
+        <p>IMPORTANTE! Esta página realiza las compras mediante PayPal, por lo que es importante tener una cuenta. Si ya
+            tiene una cuenta, ignore este mensaje. De lo contrario, regístrese en el siguiente enlace:</p>
+        <a href="https://www.paypal.com/mx/home">Registrarse en PayPal</a><br>
+        <label for="hide-popup-checkbox">
+            <input type="checkbox" id="hide-popup-checkbox"> No mostrar otra vez
+          </label>
+        <button id="popup-close" class="popup-close btn btn-primary">Cerrar</button>
+    </div>
+
+
+
+    <!-- Enlaces a los archivos JavaScript de Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // JavaScript
+        document.addEventListener("DOMContentLoaded", function () {
+            var popup = document.getElementById("popup");
+            var closeButton = document.getElementById("popup-close");
+            var hideCheckbox = document.getElementById("hide-popup-checkbox");
+
+            closeButton.addEventListener("click", function () {
+                popup.style.display = "none";
+
+                if (hideCheckbox.checked) {
+                    // Guardar la preferencia del usuario para no mostrar el popup
+                    localStorage.setItem("hidePopup", "true");
+                } else {
+                    // Eliminar la preferencia del almacenamiento local
+                    localStorage.removeItem("hidePopup");
+                }
+            });
+
+            // Comprobar si el popup ya fue ocultado previamente
+            if (localStorage.getItem("hidePopup") === "true") {
+                popup.style.display = "none";
+            }
+        });
+    </script>
+
+</script>
+
+    <footer class="footer bg-dark text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Contacto</h3>
+                    <p>Teléfono: +52 656-176-6201</p>
+                    <p>Email: gameer7wjz@gmail.com</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Ubicación</h3>
+                    <p>Dirección: Calle Jardin de manzanos 1108, Fraccionamiento Jardin de las moras etapa 2</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
